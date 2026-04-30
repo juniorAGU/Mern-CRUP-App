@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState,useContext } from 'react';
 import { authContext } from '../Context/Authcontext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Register() {
@@ -99,9 +99,9 @@ function Register() {
                     </h1>
                     <p className="text-sm text-[#9a7b65] mt-1">
                         Already have an account?{" "}
-                        <a href="/login" className="text-[#c8845a] hover:underline font-semibold">
-                        Sign in
-                        </a>
+                        <Link to={'/login'} className="text-[#c8845a] hover:underline font-semibold">
+                            Sign in
+                        </Link>
                     </p>
                 </header>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
