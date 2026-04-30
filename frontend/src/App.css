@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+section{
+    width: 100%;
+    min-height: 100dvh;
+}
+main.light{
+    @apply bg-light-lavender
+}
+main.light .main-header{
+    @apply bg-white border-b border-[#f5ede0];
+}
+
+main.light  section{
+    @apply bg-light-lavender
+}
+
+main.light article{
+    background-color: transparent;
+}
+main.light .main-footer{
+    @apply bg-white border-t border-[#f5ede0];
+}
+main.light .overlay{
+    @apply bg-black/50
+}
+main.light .inner{
+    @apply bg-white
+}
+main.light .items{
+    @apply bg-white
+}
+
+
+
+
+
+
+main.dark{
+    @apply bg-dark-hero
+}
+main.dark .main-footer{
+    @apply bg-[#1a1625] border-t border-[#2d2640];
+}
+main.dark .main-header{
+    @apply bg-[#1a1625] border-b border-[#2d2640];
+}
+main.dark .main-header article {
+    background: transparent;
+    color: white;
+}
+main.dark  section{
+    @apply bg-dark-hero
+}
+main.dark .h1{
+    color: #c8845a;
+}
+main.dark article{
+    background-color: transparent;
+}
+main.dark .overlay{
+    @apply bg-black/50
+}
+main.dark .inner{
+    @apply bg-white
+}
+main.dark .items{
+    @apply bg-white
+}
+
+
+.slider{
+    transition: all linear 0.5s;
+    animation-name: slid;
+    animation-duration: 8s;
+}
+@keyframes slid {
+    from{
+        opacity: 1;
+        transform: translate(0);
+    }
+    to{
+        opacity: 0 ;
+        transform: translateX(-100px)
+    }
+}
