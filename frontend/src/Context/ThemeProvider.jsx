@@ -4,10 +4,10 @@ import { useState, createContext } from 'react'
 
 export const themeContext = createContext()
 function ThemeProvider( {children} ) {
-    const [theme, setThems] = useState(() => {
+    const [theme, setThems] = useState("light")
+    setThems(
         localStorage.getItem("theme") || "light"
-    })
-
+    )
 
 
     const toggleTheme = () => {
