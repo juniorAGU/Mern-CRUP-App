@@ -41,7 +41,7 @@ function EditProduct({ onclose, id}) {
                 Description: datas.Description,
                 price: datas.price
             }
-            const success = await Edit({newdata},id);
+            const success = await Edit(newdata, id);
                 if(success){
                     setDatas({
                         name: "",

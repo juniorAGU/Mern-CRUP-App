@@ -47,12 +47,16 @@ const PatchOne = async (req,res,next) => {
         if(!name || !Description || !price){
             throw new Error("invalid input")
         }
-        const save = await Product.findByIdAndUpdate(id,{name: name, Description: Description,price: price});
+        const save = await Product.findByIdAndUpdate(
+            id,
+            { name, description: Description, price},
+            {new: true}
+        );
 
         if(!save){
             throw new Error(" Failed, something went wrong")
         }
-        res.status(201).json({
+        res.status(200).json({
             success: true,
             message: "successfull",
             products: save

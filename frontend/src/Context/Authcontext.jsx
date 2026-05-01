@@ -54,7 +54,7 @@ function Authcontextprovider({children}) {
         if(!response.ok){
             alert(reult.errors || "An Error occured trace it")
         }
-        
+
         localStorage.setItem("user", JSON.stringify(reult.user))
         setUsers1(reult.user)
         return true
@@ -118,17 +118,16 @@ function Authcontextprovider({children}) {
         
     }
 
-    const Edit = async ( { newdata},id  ) => {
-        const disData = {
-            name: newdata.name,
-            Description: newdata.Description,
-            price: newdata.price
-        }
+    const Edit = async (newdata, id) => {
         try{
             const response = await fetch(`${import.meta.env.VITE_PRO_API}/${id}`,{
                 method: 'PATCH',
                 headers: {"Content-type": "application/json"},
-                body: JSON.stringify(disData),
+                body: JSON.stringify({
+                    name: newdata.name,
+                    Description: newdata.Description,
+                    price: newdata.price
+            }),
                 credentials: 'include'
             })
             const result = await response.json();
