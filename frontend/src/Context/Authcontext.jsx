@@ -50,12 +50,13 @@ function Authcontextprovider({children}) {
         })
 
         const reult = await response.json();
-        localStorage.setItem("user", JSON.stringify(reult.user))
 
         if(!response.ok){
             alert(reult.errors || "An Error occured trace it")
         }
-
+        
+        localStorage.setItem("user", JSON.stringify(reult.user))
+        setUsers1(reult.user)
         return true
     }
 
